@@ -2,15 +2,33 @@
 
 namespace App\Controllers;
 
-use CodeIgniter\Controller;
+use App\Models\ProductModel;
 
-class Product extends Controller
+class Product extends BaseController
 {
+    protected $product;
+    public function __construct()
+    {
+        $this->product = new ProductModel();
+    }
+
     public function index()
     {
+        $product = $this->product->getProduct();
         $data = [
-            'title' => "Product | O'Book Store"
+            'title' => "Home | O'Book Store",
+            'produk' => $product
         ];
         return view('pages/product', $data);
+    }
+
+    public function detail($slug)
+    {
+        $product = $this->product->getProduct($slug);
+        $data = [
+            'title' => 'detail',
+            'product' => $product,
+        ];
+        return view('pages/detail', $data);
     }
 }
