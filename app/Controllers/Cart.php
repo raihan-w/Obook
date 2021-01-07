@@ -16,6 +16,14 @@ class Cart extends BaseController
 
     public function index()
     {
+        $data = [
+            'title' => "Cart | O'Book Store",
+        ];
+        return view('pages/cart', $data);
+    }
+
+    public function cek()
+    {
         $cart = \Config\Services::cart();
         $response = $cart->contents();     
         echo '<pre>';
