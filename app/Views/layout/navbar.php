@@ -26,6 +26,7 @@
             </li>
             <li class="nav-item">
                 <i class="fa fa-shopping-cart" style="font-size: 24px; margin-top: 8px"></i>
+                <span class="badge badge-danger navbar-badge"> 3 </span>
             </li>
             <li></li>
         </ul>

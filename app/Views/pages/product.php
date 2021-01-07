@@ -203,7 +203,7 @@
                 <div class="card" onclick="window.location.href='/product/<?= $p['slug']; ?>'">
                     <img src="/sampul/<?= $p['sampul']; ?>" class="card-img-top" alt="">
                     <div class="card-body">
-                        <p class="price"> Rp.100.000 </p>
+                        <p class="price"> <?= number_to_currency($p['harga'], 'IDR'); ?> </p>
                         <p class="judul"> <?= $p['judul']; ?> </p>
                         <div class="rate">
                             <span class="fa fa-star checked"></span>
@@ -221,7 +221,7 @@
                 <div class="card" onclick="window.location.href='/product/<?= $p['slug']; ?>'">
                     <img src="/sampul/<?= $p['sampul']; ?>" class="card-img-top" alt="">
                     <div class="card-body">
-                        <p class="price"> Rp.100.000 </p>
+                        <p class="price"> <?= number_to_currency($p['harga'], 'IDR'); ?> </p>
                         <p class="judul"> <?= $p['judul']; ?> </p>
                         <div class="rate">
                             <span class="fa fa-star checked"></span>
@@ -239,7 +239,7 @@
                 <div class="card" onclick="window.location.href='/product/<?= $p['slug']; ?>'">
                     <img src="/sampul/<?= $p['sampul']; ?>" class="card-img-top" alt="">
                     <div class="card-body">
-                        <p class="price"> Rp.100.000 </p>
+                        <p class="price"> <?= number_to_currency($p['harga'], 'IDR'); ?> </p>
                         <p class="judul"> <?= $p['judul']; ?> </p>
                         <div class="rate">
                             <span class="fa fa-star checked"></span>

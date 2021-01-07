@@ -10,6 +10,8 @@ class Product extends BaseController
     public function __construct()
     {
         $this->product = new ProductModel();
+        helper('number');
+        helper('form');
     }
 
     public function index()
@@ -31,4 +33,6 @@ class Product extends BaseController
         ];
         return view('pages/detail', $data);
     }
+
+    
 }

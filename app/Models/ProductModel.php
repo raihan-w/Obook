@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class ProductModel extends Model
 {
-    protected $table = 'buku';
+    protected $table = 'product';
 
     public function getProduct($slug = false)
     {

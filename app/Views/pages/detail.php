@@ -4,12 +4,11 @@
 
 <div class="container product">
     <div class="product-view">
-        <div class="img-container"onclick="window.location.href='https://raihan-w.github.io/sim-display/index.html'">
+        <div class="img-container" onclick="window.location.href='https://raihan-w.github.io/sim-display/index.html'">
             <img src="/sampul/<?= $product['sampul']; ?>" alt="">
         </div>
         <div class="container">
-            <button class="btn-product" onclick="window.location.href=''"> Beli Sekarang </button>
-            <button class="btn-product" onclick="window.location.href=''"> Keranjang Belanja </button>
+            <button class="btn-product" data-toggle="modal" data-target="#myModal"> BELI SEKARANG </button>
         </div>
     </div>
     <div class="product-info">
@@ -19,7 +18,7 @@
                     <p class="discount"> Rp.87.000 </p>
                 </div>
                 <div class="col-md">
-                    <p class="price"> Rp.50.000 </p>
+                    <p class="price"> <?= number_to_currency($product['harga'], 'IDR'); ?> </p>
                 </div>
             </div>
             <h2>
@@ -57,6 +56,56 @@
                 </tr>
             </table>
         </div>
+    </div>
+</div>
+
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <?php
+        echo form_open('Cart/add');
+        echo form_hidden('id', $product['id']);
+        echo form_hidden('price', $product['harga']);
+        echo form_hidden('name', $product['judul']);
+        //option
+        echo form_hidden('sampul', $product['sampul']);
+        ?>
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title"> Jumlah item akan bertambah di keranjang belanja</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <img src="/sampul/<?= $product['sampul']; ?>" width="100">
+                        </div>
+                        <div class="col-sm-8">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <h5>
+                                            <?= $product['judul']; ?>
+                                        </h5>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><?= $product['pengarang']; ?></td>
+                                </tr>
+                                <tr>
+                                    <td> <?= number_to_currency($product['harga'], 'IDR'); ?> </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="submit"> Tambah ke keranjang </button>
+            </div>
+        </div>
+        <?php echo form_close(); ?>
     </div>
 </div>
 
