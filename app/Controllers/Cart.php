@@ -18,6 +18,7 @@ class Cart extends BaseController
     {
         $data = [
             'title' => "Cart | O'Book Store",
+            'cart' => \Config\Services::cart(),
         ];
         return view('pages/cart', $data);
     }
@@ -41,6 +42,7 @@ class Cart extends BaseController
             'name'      => $this->request->getPost('name'),
             'options'   => array(
                 'sampul'    => $this->request->getPost('sampul'),
+                'author'    => $this->request->getPost('author'),
             )
         ));
         return redirect()->to(base_url('cart'));

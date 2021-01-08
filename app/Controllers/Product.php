@@ -19,6 +19,7 @@ class Product extends BaseController
         $product = $this->product->getProduct();
         $data = [
             'title' => "Home | O'Book Store",
+            'cart' => \Config\Services::cart(),
             'produk' => $product
         ];
         return view('pages/product', $data);
@@ -29,6 +30,7 @@ class Product extends BaseController
         $product = $this->product->getProduct($slug);
         $data = [
             'title' => 'detail',
+            'cart' => \Config\Services::cart(),
             'product' => $product,
         ];
         return view('pages/detail', $data);

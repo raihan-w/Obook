@@ -68,6 +68,7 @@
         echo form_hidden('name', $product['judul']);
         //option
         echo form_hidden('sampul', $product['sampul']);
+        echo form_hidden('author', $product['pengarang']);
         ?>
 
         <div class="modal-content">
