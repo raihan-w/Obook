@@ -76,8 +76,10 @@ li {
 }
 
 .price {
-  font-weight: bold;
-  color: red;
+  color: #e61e64;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 0;
 }
 
 .judul {
@@ -140,7 +142,6 @@ li {
   border: 1px solid #e8eaf6;
   float: right;
   padding: 10px;
-
   border: none;
   border-bottom-color: currentcolor;
   border-bottom-style: none;
@@ -192,6 +193,7 @@ li {
   flex: 1;
   text-align: right;
   display: table;
+  height: 120px;
 }
 
 .qty-action {
@@ -200,9 +202,24 @@ li {
 }
 
 .qty-input {
-  width: 50%;
+  border: none;
+  border-bottom: 1px solid;
+  width: 40px;
   display: inline-flex;
   text-align: center;
+}
+
+.qty-button {
+  width: 30px;
+  border: 1px solid #5a5a5a;
+  color: #5a5a5a;
+  border-radius: 4px;
+  justify-content: center;
+}
+
+.subTotal {
+  color: #281e5a;
+  font-weight: normal;
 }
 
 .checkout-area {
@@ -240,7 +257,14 @@ li {
 
 .author {
   color: #b4b4b4;
-    font-size: 12px;
-    line-height: 1.3;
-    list-style: none;
+  font-size: 12px;
+  line-height: 1.3;
+  list-style: none;
+}
+
+.delete-header {
+  margin: 0 8px;
+  cursor: pointer;
+  font-weight: 700;
+  color: #5a5a5a;
 }

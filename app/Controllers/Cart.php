@@ -26,10 +26,10 @@ class Cart extends BaseController
     public function cek()
     {
         $cart = \Config\Services::cart();
-        $response = $cart->contents();     
+        $response = $cart->contents();
         echo '<pre>';
         print_r($response);
-        echo'</pre>';
+        echo '</pre>';
     }
 
     public function add()
@@ -52,5 +52,28 @@ class Cart extends BaseController
     {
         $cart = \Config\Services::cart();
         $cart->destroy();
+        return redirect()->to(base_url('cart'));
+    }
+
+    public function update()
+    {
+        $cart = \Config\Services::cart();
+        $i = 1;
+        foreach ($cart->contents() as $key => $value) {
+            # code...
+            $cart->update(array(
+                'rowid'   => $value['rowid'],
+                'qty'     => $this->request->getPost('qty' . $i++),
+            ));
+        }
+        return redirect()->to(base_url('cart'));
+    }
+
+    public function delete($rowid)
+    {
+        $cart = \Config\Services::cart();
+        $cart->remove($rowid);
+        session()->setflashdata('delete', 'Item berhasil dihapus dari keranjang');
+        return redirect()->to(base_url('cart'));
     }
 }
