@@ -4,7 +4,7 @@
 
 <div class="container product">
     <div class="product-view">
-        <div class="img-container" onclick="window.location.href='https://raihan-w.github.io/sim-display/index.html'">
+        <div class="img-container" onclick="window.location.href='https://raihan-w.github.io/display/<?= $product['link']; ?>/index.html'">
             <img src="/sampul/<?= $product['sampul']; ?>" alt="">
         </div>
         <div class="container">

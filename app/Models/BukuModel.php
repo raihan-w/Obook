@@ -17,10 +17,4 @@ class BukuModel extends Model
         ->get()->getResultArray();
     }
 
-    public function getRecom()
-    {
-        return $this->db->table('rekomendasi')
-        ->join('buku', 'buku.id = rekomendasi.buku')
-        ->get()->getResultArray();
-    }
 }
