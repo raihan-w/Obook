@@ -1,6 +1,6 @@
 <nav class="navbar sticky-top navbar-expand-xl" style="background-image: url('/banner/navground.png');">
     <div class="container">
-        <a class="navbar-brand">
+        <a class="navbar-brand" href="/Product">
             <img src="/banner/logo.png" alt="" style="width: 250px;">
         </a>
 
@@ -36,6 +36,11 @@
 
                 </li>
             <?php endforeach; ?>
+            <li>
+                <form action="/login/logout" method="post">
+                    <button class="btn btn-danger">logout</button>
+                </form>
+            </li>
         </ul>
     </div>
 </nav>
