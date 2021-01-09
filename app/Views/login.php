@@ -20,6 +20,9 @@
                 <?php if (session()->getFlashdata('msg')) : ?>
                     <div class="alert alert-danger"><?= session()->getFlashdata('msg') ?></div>
                 <?php endif; ?>
+                <?php if (session()->getFlashdata('pesan')) : ?>
+                    <div class="alert alert-success"><?= session()->getFlashdata('pesan') ?></div>
+                <?php endif; ?>
                 <form action="/login/auth" method="post">
                     <div class="mb-3">
                         <label for="InputForEmail" class="form-label">Email address</label>

@@ -35,7 +35,7 @@ class Register extends Controller
 				'user_email' 	=> $this->request->getVar('email'),
 				'user_password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)
 			];
-			$session->setFlashdata('msg', 'login success');
+			$session->setFlashdata('pesan', 'registerasi sukses, anda sekarang dapat login');
 			$model->save($data);
 			return redirect()->to('/login');
 		} else {
