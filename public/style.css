@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
 li {
   margin-right: 2%;
 }
@@ -49,13 +55,10 @@ li {
 
 .katalog {
   display: flex;
-  margin: 0 auto;
-  margin-bottom: 5%;
-}
-
-.jenis {
-  display: flex;
-  flex: 2;
+  justify-content: space-around;
+  margin: 10px;
+  padding: 5px;
+  box-sizing: border-box;
 }
 
 .card {

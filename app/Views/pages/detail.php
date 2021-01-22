@@ -4,19 +4,17 @@
 
 <div class="container product">
     <div class="product-view">
-        <div class="img-container" onclick="window.location.href='https://raihan-w.github.io/display/<?= $product['link']; ?>/index.html'">
+        <div class="img-container">
             <img src="/sampul/<?= $product['sampul']; ?>" alt="">
         </div>
         <div class="container">
+            <button class="btn-product" onclick=" window.open('https://raihan-w.github.io/display/<?= $product['link']; ?>/index.html','_blank')"> DISPLAY </button>
             <button class="btn-product" data-toggle="modal" data-target="#myModal"> BELI SEKARANG </button>
         </div>
     </div>
     <div class="product-info">
         <div class="detail">
             <div class="row">
-                <div class="col-md">
-                    <p class="discount"> Rp.87.000 </p>
-                </div>
                 <div class="col-md">
                     <p class="price"> <?= number_to_currency($product['harga'], 'IDR'); ?> </p>
                 </div>

@@ -185,71 +185,23 @@
 
 <!-- Katalog -->
 <div class="container">
-    <div class="row">
-        <div class="col-4">
-            <h4 class="catalog-menu">Rekomendasi</h4>
-        </div>
-        <div class="col-4">
-            <h4 class="catalog-menu">Buku Terbaru</h4>
-        </div>
-        <div class="col-4">
-            <h4 class="catalog-menu">Novel Terbaru</h4>
-        </div>
-    </div>
-</div>
-<div class="container katalog">
-    <div class="jenis">
+    <h3 style="color: rgb(248, 9, 9);"> Katalog O'Book</h3>
+    <div class="katalog">
         <?php foreach ($produk as $p) : ?>
-                <div class="card" onclick="window.location.href='/product/<?= $p['slug']; ?>'">
-                    <img src="/sampul/<?= $p['sampul']; ?>" class="card-img-top" alt="">
-                    <div class="card-body">
-                        <p class="price"> <?= number_to_currency($p['harga'], 'IDR'); ?> </p>
-                        <p class="judul"> <?= $p['judul']; ?> </p>
-                        <div class="rate">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                        </div>
+            <div class="card" onclick="window.location.href='/product/<?= $p['slug']; ?>'">
+                <img src="/sampul/<?= $p['sampul']; ?>" class="card-img-top" alt="">
+                <div class="card-body">
+                    <p class="price"> <?= number_to_currency($p['harga'], 'IDR'); ?> </p>
+                    <p class="judul"> <?= $p['judul']; ?> </p>
+                    <div class="rate">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
                     </div>
                 </div>
-        <?php endforeach; ?>
-    </div>
-    <div class="jenis">
-        <?php foreach ($produk as $p) : ?>
-                <div class="card" onclick="window.location.href='/product/<?= $p['slug']; ?>'">
-                    <img src="/sampul/<?= $p['sampul']; ?>" class="card-img-top" alt="">
-                    <div class="card-body">
-                        <p class="price"> <?= number_to_currency($p['harga'], 'IDR'); ?> </p>
-                        <p class="judul"> <?= $p['judul']; ?> </p>
-                        <div class="rate">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                        </div>
-                    </div>
-                </div>
-        <?php endforeach; ?>
-    </div>
-    <div class="jenis">
-        <?php foreach ($produk as $p) : ?>
-                <div class="card" onclick="window.location.href='/product/<?= $p['slug']; ?>'">
-                    <img src="/sampul/<?= $p['sampul']; ?>" class="card-img-top" alt="">
-                    <div class="card-body">
-                        <p class="price"> <?= number_to_currency($p['harga'], 'IDR'); ?> </p>
-                        <p class="judul"> <?= $p['judul']; ?> </p>
-                        <div class="rate">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                        </div>
-                    </div>
-                </div>
+            </div>
         <?php endforeach; ?>
     </div>
 </div>
