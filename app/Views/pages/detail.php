@@ -5,10 +5,10 @@
 <div class="container product">
     <div class="product-view">
         <div class="img-container">
-            <img src="/sampul/<?= $product['sampul']; ?>" alt="">
+            <img src="/sampul/<?= $product['sampul']; ?>" alt="" width="200">
         </div>
         <div class="container">
-            <button class="btn-product" onclick=" window.open('https://raihan-w.github.io/display/<?= $product['link']; ?>/index.html','_blank')"> DISPLAY </button>
+            <button class="btn-product" onclick=" window.open('https://raihan-w.github.io/display/samples/<?= $product['link']; ?>','_blank')"> DISPLAY </button>
             <button class="btn-product" data-toggle="modal" data-target="#myModal"> BELI SEKARANG </button>
         </div>
     </div>
@@ -41,16 +41,8 @@
                     <td> <?= $product['pengarang']; ?> </td>
                 </tr>
                 <tr>
-                    <td> ISBN </td>
-                    <td> <?= $product['ISBN']; ?> </td>
-                </tr>
-                <tr>
                     <td> Kategori </td>
                     <td> <?= $product['kategori']; ?> </td>
-                </tr>
-                <tr>
-                    <td> Penerbit </td>
-                    <td> <?= $product['penerbit']; ?> </td>
                 </tr>
             </table>
         </div>
@@ -60,13 +52,14 @@
 <div class="modal fade" id="myModal">
     <div class="modal-dialog modal-dialog-centered">
         <?php
-        echo form_open('Cart/add');
+        echo form_open('Collection/add');
         echo form_hidden('id', $product['id']);
         echo form_hidden('price', $product['harga']);
         echo form_hidden('name', $product['judul']);
         //option
         echo form_hidden('sampul', $product['sampul']);
         echo form_hidden('author', $product['pengarang']);
+        echo form_hidden('link', $product['link']);
         ?>
 
         <div class="modal-content">
